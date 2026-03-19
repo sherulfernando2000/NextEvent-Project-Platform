@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         name   : "service-register",
-        script : "java -jar ./service-register/target/Service-Registry-1.0.0.jar",
+        script : "java -jar ./service-registry/target/Service-Registry-1.0.0.jar",
         log_file: "./logs/service-registry",
       }
 
