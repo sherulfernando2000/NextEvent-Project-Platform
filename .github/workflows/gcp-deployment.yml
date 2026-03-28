@@ -1,0 +1,12 @@
+name: Next Event Project Platform - GCP Deployment
+on: push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+
+    steps:
+      - name: First step of deployment
+        run: echo "starting gcp deployment process"
