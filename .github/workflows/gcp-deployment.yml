@@ -33,6 +33,6 @@ jobs:
             gcloud compute ssh ${{env.USER_NAME}}@${{env.VM_NAME}} --zone=${{env.ZONE}}
             --command "echo 'connected with platform-seed success!' &&
             cd NextEvent-Project-Platform/ && 
-            git pull --recurse-modules &&
+            git pull --recurse-submodules &&
             mvn clean package
             "
