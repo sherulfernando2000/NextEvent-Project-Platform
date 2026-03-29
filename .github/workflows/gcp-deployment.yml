@@ -28,9 +28,11 @@ jobs:
       - name: Start the vm-platform-seed instance
         run: gcloud compute instances start ${{env.VM_NAME}} --zone=${{env.ZONE}}
 
-      - name: Connect with the vm-platform-seed through SSH
+      - name: Connect with the vm-platform-seed through SSH, Pull the latest code & Build the project
         run: >
             gcloud compute ssh ${{env.USER_NAME}}@${{env.VM_NAME}} --zone=${{env.ZONE}}
             --command "echo 'connected with platform-seed success!' &&
-            pwd && whoami
+            cd NextEvent-Project-Platform/ && 
+            git pull --recurse-modules &&
+            mvn clean package
             "
