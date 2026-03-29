@@ -37,3 +37,5 @@ jobs:
             source ~/.bashrc &&
             mvn clean package
             "
+      - name: Stop the vm-platform-seed instance
+        run: gcloud compute instances stop ${{env.VM_NAME}} --zone=${{env.ZONE}}
