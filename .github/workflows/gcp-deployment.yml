@@ -34,5 +34,6 @@ jobs:
             --command "echo 'connected with platform-seed success!' &&
             cd NextEvent-Project-Platform/ && 
             git pull --recurse-submodules &&
+            source ~/.bashrc &&
             mvn clean package
             "
