@@ -58,7 +58,7 @@ jobs:
 
       - name: Update the instance group with the new image
         run: |
-              gcloud beta compute instance-groups managed rolling-action start-update ${{env.INSTANCE_GROUP}} \
+              gcloud  compute instance-groups managed rolling-action start-update ${{env.INSTANCE_GROUP}} \
               --region=${{env.REGION}} \
               --type=proactive \
               --max-unavailable=3 \
