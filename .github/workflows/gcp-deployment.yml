@@ -8,6 +8,7 @@ jobs:
     env:
       VM_NAME: vm-platform-seed
       ZONE: asia-south2-a
+      REGION: asia-south2
       USER_NAME: sherul_dhanushka
       IMAGE_NAME:  vm-platform-seed-boot-image-v2
 
@@ -43,3 +44,11 @@ jobs:
 
       - name:  Delete the boot disk image
         run: gcloud compute images delete  ${{env.IMAGE_NAME}}
+
+      - name: Create a new boot disk image with the previous image name
+        run: |
+            gcloud compute images create ${{env.IMAGE_NAME}} \
+            --project=project-0ae0d75b-3979-4ebf-be9 \
+            --source-disk=${{env.VM_NAME}} \
+            --source-disk-zone=${{env.ZONE}}\
+            --storage-location=${{env.REGION}}
